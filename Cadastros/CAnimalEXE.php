@@ -10,7 +10,7 @@
         echo "<h1>Dados da cidade</h1>";
         echo "Nome: $nome<br>";
 
-        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, a_id)";
+        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, p_id)";
         $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."')";
         echo $sql;
 

@@ -16,7 +16,7 @@
                 <form class="form" action="../Cadastros/CAnimalEXE.php" method="post">
                     <div class="input-group">
                         <label for="nome">Nome Do Animal</label>
-                        <input type="text" name="nome" id="surname" placeholder="mome">
+                        <input type="text" name="nome" id="surname" placeholder="nome">
                     </div>
                     <div class="input-group">
                         <label for="especie">Especie do Animal</label>
