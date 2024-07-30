@@ -1,17 +1,17 @@
 <?php
         include('../includes/includes.php');
         $nome = $_POST['nome'];
-        $especie = $_POST['especie'];
-        $raca = $_POST['raça'];
-        $datan = $_POST['datan'];
-        $castrado = $_POST['castrado'];
+        $email = $_POST['email'];
+        $endereco = $_POST['endereco'];
+        $bairro = $_POST['bairro'];
+        $cep = $_POST['cep'];
         $id = $_POST['id'];
 
         echo "<h1>Dados da cidade</h1>";
         echo "Nome: $nome<br>";
 
-        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, a_id)";
-        $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."')";
+        $sql = "INSERT INTO pessoa (p_nome, p_email, p_endereço, p_bairro, p_cep, c_id)";
+        $sql .= " VALUES('".$nome."','".$email."','".$endereco."','".$bairro."','".$cep."','".$id."')";
         echo $sql;
 
         $result = mysqli_query($con,$sql);
@@ -21,4 +21,4 @@
             echo "<h2>Erro ao cadastrar!</h2>";
             echo mysqli_error($con);
         }
-    ?>
+?>

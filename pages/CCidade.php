@@ -13,10 +13,10 @@
             <aside class="form-flex">
             <div class="form-container">
                 <p class="title">Cadastre de Cidades</p>
-                <form class="form" action="" method="post">
+                <form class="form" action="../Cadastros/CCidadeEXE.php" method="post">
                     <div class="input-group">
-                        <label for="name">Nome Da Cidade</label>
-                        <input type="text" name="name" id="name" placeholder="Nome">
+                        <label for="nome">Nome Da Cidade</label>
+                        <input type="text" name="nome" id="nome" placeholder="nome">
                     </div>
                     <div class="input-group">
                     <label for="nome">Estado:<br></label>

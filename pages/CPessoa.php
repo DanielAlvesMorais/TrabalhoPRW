@@ -13,24 +13,37 @@
             <aside class="form-flex">
             <div class="form-container">
                 <p class="title">Cadastre dos Donos</p>
-                <form class="form" action="" method="post">
+                <form class="form" action="../Cadastros/CPessoaEXE.php" method="post">
                     <div class="input-group">
-                        <label for="name">Nome Da Pessoa</label>
-                        <input type="text" name="name" id="name" placeholder="Nome">
+                        <label for="nome">Nome Da Pessoa</label>
+                        <input type="text" name="nome" id="surname" placeholder="nome">
                     </div>
                     <div class="input-group">
                         <label for="email">Email da Pessoa</label>
                         <input type="email" name="email" id="surname" placeholder="email">
                     </div>
                     <div class="input-group">
-                        <label for="endereço">Endereço da Pessoa</label>
-                        <input type="text" name="endereço" id="surname" placeholder="endereço">
+                        <label for="endereco">Endereço da Pessoa</label>
+                        <input type="text" name="endereco" id="surname" placeholder="endereco">
                     </div>
                     <div class="input-group">
                         <label for="bairro">Bairro da Pessoa</label>
                         <input type="text" name="bairro" id="bairro" placeholder="bairro">
                     </div>
-                    
+                    <label for="Cidade">Cidade:<br></label>
+                    <div class="input-group">
+                        <select name="id" id="id">
+                            <?php
+                                include('../includes/includes.php');
+                                $sql = "SELECT * FROM cidade";
+                                $result = mysqli_query($con,$sql);
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    echo "<option value='".$row['c_id']."'>".$row['c_nome']."/".$row['c_estado']."</option>";
+                                }
+                            ?>
+                        </select>
+                    </div>
                     <div class="input-group">
                         <label for="cep">CEP da Pessoa</label>
                         <input type="text" name="cep" id="cep" placeholder="cep">

@@ -1,17 +1,13 @@
 <?php
         include('../includes/includes.php');
         $nome = $_POST['nome'];
-        $especie = $_POST['especie'];
-        $raca = $_POST['raça'];
-        $datan = $_POST['datan'];
-        $castrado = $_POST['castrado'];
-        $id = $_POST['id'];
+        $estado = $_POST['estado'];
 
         echo "<h1>Dados da cidade</h1>";
         echo "Nome: $nome<br>";
 
-        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, a_id)";
-        $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."')";
+        $sql = "INSERT INTO Cidade (c_nome, c_estado)";
+        $sql .= " VALUES('".$nome."','".$estado."')";
         echo $sql;
 
         $result = mysqli_query($con,$sql);

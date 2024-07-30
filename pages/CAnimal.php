@@ -13,27 +13,40 @@
             <aside class="form-flex">
             <div class="form-container">
                 <p class="title">Cadastre o seu animal</p>
-                <form class="form" action="" method="post">
+                <form class="form" action="../Cadastros/CAnimalEXE.php" method="post">
                     <div class="input-group">
-                        <label for="name">Nome Do Animal</label>
-                        <input type="text" name="name" id="name" placeholder="Nome">
+                        <label for="nome">Nome Do Animal</label>
+                        <input type="text" name="nome" id="surname" placeholder="mome">
                     </div>
                     <div class="input-group">
-                        <label for="surname">Especie do Animal</label>
-                        <input type="text" name="Especie" id="surname" placeholder="Especie">
+                        <label for="especie">Especie do Animal</label>
+                        <input type="text" name="especie" id="surname" placeholder="especie">
                     </div>
                     <div class="input-group">
-                        <label for="surname">Raça do Animal</label>
-                        <input type="text" name="Raça" id="surname" placeholder="Raça">
+                        <label for="raça">Raça do Animal</label>
+                        <input type="text" name="raça" id="surname" placeholder="raça">
                     </div>
                     <div class="input-group">
-                        <label for="surname">Data de Nascimento do Animal</label>
+                        <label for="surname">Data de nascimento do Animal</label>
                         <input type="date" name="datan" id="surname" placeholder="datan">
                     </div>
-                    
+                    <div>
+                        <label for="ativo">O Animal está castrado<br></label>
+                        <input type="radio" name="castrado" id="castrado" value="1">
+                    </div>
                     <div class="input-group">
-                        <label for="date">Código do Dono do Animal</label>
-                        <input type="int" name="p_id" id="p_id" placeholder="p_id">
+                        <label for="p_nome">Nome do dono:<br></label>
+                        <select name="id" id="id">
+                            <?php
+                                include('../includes/includes.php');
+                                $sql = "SELECT * FROM pessoa";
+                                $result = mysqli_query($con,$sql);
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    echo "<option value='".$row['p_id']."'>".$row['p_nome']."</option>";
+                                }
+                            ?>
+                        </select>
                     </div>
                     <input class="sign" type="submit" value="Cadastrar">
                 </form>
