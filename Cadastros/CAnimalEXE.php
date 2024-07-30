@@ -7,11 +7,21 @@
         $castrado = $_POST['castrado'];
         $id = $_POST['id'];
 
+        $idade = new DateTime($datan);
+        $da = new DateTime();
+        $idade = $da->diff($idade);
+        $idade = $idade->y;
+        
+        if($castrado != 1)
+        {
+            $castrado = 0;
+        }
+
         echo "<h1>Dados da cidade</h1>";
         echo "Nome: $nome<br>";
 
-        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, p_id)";
-        $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."')";
+        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, p_id, a_idade)";
+        $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."','".$idade."')";
         echo $sql;
 
         $result = mysqli_query($con,$sql);

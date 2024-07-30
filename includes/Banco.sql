@@ -2,6 +2,12 @@ CREATE DATABASE BANCO;
 
 USE BANCO;
 
+CREATE TABLE Cidade (
+    c_id INT PRIMARY KEY AUTO_INCREMENT,
+    c_nome VARCHAR(100),
+    c_estado CHAR(2)
+);
+
 CREATE TABLE Pessoa (
     p_id INT PRIMARY KEY AUTO_INCREMENT,
     p_nome VARCHAR(100),
@@ -23,10 +29,4 @@ CREATE TABLE Animal (
     a_castrado BOOL,
     p_id INT,
     FOREIGN KEY (p_id) REFERENCES Pessoa(p_id)
-);
-
-CREATE TABLE Cidade (
-    c_id INT PRIMARY KEY AUTO_INCREMENT,
-    c_nome VARCHAR(100),
-    c_estado CHAR(2)
 );

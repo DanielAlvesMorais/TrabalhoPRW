@@ -7,7 +7,7 @@
     <title>Consulta de Clientes</title>
     <style>
         table {
-            width: 80%;
+            width: 90%;
             margin: auto;
             border-collapse: collapse;
         }
@@ -50,6 +50,8 @@
             <th>Bairro</th>
             <th>Cidade</th>
             <th>Cep</th>
+            <th>Atualizar</th>
+            <th>Deletar</th>
         </tr>
         <?php
             // Exibir os dados da consulta
@@ -62,6 +64,8 @@
                 echo "<td>".$row['p_bairro']."</td>";
                 echo "<td>".$row['c_nome']." - ".$row['c_estado']."</td>";
                 echo "<td>".$row['p_cep']."</td>";
+                echo "<td> Atualizar as informações de <a href ='APessoa.php?id=".$row['p_id']."'>".$row['p_nome']."</a></td>";
+                echo "<td> Deletar as informações de  <a href ='DPessoa.php?id=".$row['p_id']."'>".$row['p_nome']."</a></td>";
                 echo "</tr>";
             }
         ?>
