@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Clientes</title>
+    <title>Consulta de Cidades</title>
     <style>
         table {
             width: 70%;
@@ -38,7 +38,7 @@
         }
     ?>
 
-    <h1><center>Consulta de Clientes</center></h1>
+    <h1><center>Consulta de Cidades</center></h1>
 
     <table>
         <tr>

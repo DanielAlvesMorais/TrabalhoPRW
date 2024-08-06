@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Clientes</title>
+    <title>Consulta de Animais</title>
     <style>
         table {
             width: 90%;
@@ -37,9 +37,10 @@
         if (!$result) {
             die('Erro na consulta: ' . mysqli_error($con));
         }
+
     ?>
 
-    <h1><center>Consulta de Clientes</center></h1>
+    <h1><center>Consulta de Animais</center></h1>
 
     <table>
         <tr>
@@ -57,12 +58,17 @@
         <?php
             // Exibir os dados da consulta
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                
+                $data_original = $row['a_datan'];
+                $data = new DateTime($data_original);
+                $data_formatada = $data->format('d-m-y');
+
                 echo "<tr>";
                 echo "<td>".$row['a_id']."</td>";
                 echo "<td>".$row['a_nome']."</td>";
                 echo "<td>".$row['a_especie']."</td>";
                 echo "<td>".$row['a_raça']."</td>";
-                echo "<td>".$row['a_datan']."</td>";
+                echo "<td>".$data_formatada."</td>";
                 echo "<td>".$row['a_idade']."</td>";
                 echo "<td>";
                 if($row['a_castrado'] == 1)

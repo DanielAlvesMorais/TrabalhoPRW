@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/style/style_cadastro.css">
+    <link rel="stylesheet" href="../style/style_cadastro.css">
 </head>
 <body>
     <main>
             <aside class="form-flex">
             <div class="form-container">
-                <p class="title">Cadastre o seu animal</p>
+                <p class="title">Cadastre um animal</p>
                 <form class="form" action="../Cadastros/CAnimalEXE.php" method="post">
                     <div class="input-group">
                         <label for="nome">Nome Do Animal</label>
