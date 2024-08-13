@@ -1,5 +1,15 @@
 <?php
         include('../includes/includes.php');
+
+        $nome_foto = "";
+        if(file_exists($_FILES['foto']['tmp_name']))
+        {
+            $pasta_destino = '../foto/';
+            $extensão = strtolower(substr( $_FILES['foto']['name'], -4));
+            $nome_foto = $pasta_destino . date('Ymd-His').$extensão;
+            move_uploaded_file($_FILES['foto']['tmp_name'],$nome_foto);
+        }
+
         $nome = $_POST['nome'];
         $especie = $_POST['especie'];
         $raca = $_POST['raça'];
@@ -20,8 +30,8 @@
         echo "<h1>Dados da cidade</h1>";
         echo "Nome: $nome<br>";
 
-        $sql = "INSERT INTO animal (a_nome, a_especie, a_raça, a_datan, a_castrado, p_id, a_idade)";
-        $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."','".$idade."')";
+        $sql = "INSERT INTO animal (a_nome, a_imagem, a_especie, a_raça, a_datan, a_castrado, p_id, a_idade)";
+        $sql .= " VALUES('".$nome."','".$nome_foto."','".$especie."','".$raca."','".$datan."','".$castrado."','".$id."','".$idade."')";
         echo $sql;
 
         $result = mysqli_query($con,$sql);

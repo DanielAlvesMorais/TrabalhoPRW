@@ -86,7 +86,7 @@
             <input type="hidden" name="id" value="<?php echo $row['c_id']?>">
         </div>
         <div>
-            <button type="submit">Modificar</button>
+            <input class="sign" type="submit" value="Atualizar">
                 </form>
             </div>
         </aside>

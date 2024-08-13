@@ -13,7 +13,11 @@
             <aside class="form-flex">
             <div class="form-container">
                 <p class="title">Cadastre um animal</p>
-                <form class="form" action="../Cadastros/CAnimalEXE.php" method="post">
+                <form class="form" action="../Cadastros/CAnimalEXE.php" method="post" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <label for="foto">Foto</label>
+                        <input type="file" name="foto" id="foto" accept="image/*">
+                    </div>    
                     <div class="input-group">
                         <label for="nome">Nome Do Animal</label>
                         <input type="text" name="nome" id="surname" placeholder="nome">

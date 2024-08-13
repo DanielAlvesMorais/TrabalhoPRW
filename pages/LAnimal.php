@@ -26,7 +26,7 @@
         include('../includes/includes.php');
 
         // Consulta SQL
-        $sql = "SELECT pe.a_id, pe.a_nome, pe.a_especie, pe.a_raça, pe.a_datan, pe.a_idade, pe.a_castrado, ci.p_nome
+        $sql = "SELECT pe.a_id, pe.a_nome, pe.a_imagem, pe.a_especie, pe.a_raça, pe.a_datan, pe.a_idade, pe.a_castrado, ci.p_nome
                 FROM animal pe 
                 LEFT JOIN pessoa ci ON pe.p_id = ci.p_id";
 
@@ -44,6 +44,7 @@
 
     <table>
         <tr>
+            <th>Imagem</th>
             <th>Código</th>
             <th>Nome</th>
             <th>Especie</th>
@@ -64,6 +65,12 @@
                 $data_formatada = $data->format('d-m-y');
 
                 echo "<tr>";
+                if($row['a_imagem'] == ""){
+                    echo"<td></td>";
+                }
+                else{
+                    echo '<td><img src="'.$row['a_imagem'].'" width="100px" height="100px"></td>';
+                }
                 echo "<td>".$row['a_id']."</td>";
                 echo "<td>".$row['a_nome']."</td>";
                 echo "<td>".$row['a_especie']."</td>";

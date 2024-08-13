@@ -56,7 +56,7 @@
                         <label for="cep">CEP da Pessoa</label>
                         <input type="text" name="cep" id="cep" placeholder="cep">
                     </div>
-                    <input class="sign" type="submit" value="Cadastrar">
+                    <input class="sign" type="submit" value="Atualizar">
                 </form>
             </div>
         </aside>
